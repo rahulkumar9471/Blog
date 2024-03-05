@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const CardCarousel = ({ cards }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -15,9 +15,17 @@ const CardCarousel = ({ cards }) => {
 
   return (
     <div className="relative">
-      <button className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-2 py-1 rounded-md z-10" onClick={goToPrevSlide}>Prev</button>
+      <button
+        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-2 py-1 rounded-md z-10"
+        onClick={goToPrevSlide}
+      >
+        Prev
+      </button>
       <div className="overflow-hidden relative">
-        <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentIndex * 50}%)` }}>
+        <div
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${currentIndex * 50}%)` }}
+        >
           {cards.map((card, index) => (
             <div key={index} className="w-1/2 flex-shrink-0">
               <div className="bg-white shadow-md rounded-md p-4">
@@ -28,7 +36,12 @@ const CardCarousel = ({ cards }) => {
           ))}
         </div>
       </div>
-      <button className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-2 py-1 rounded-md" onClick={goToNextSlide}>Next</button>
+      <button
+        className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-2 py-1 rounded-md"
+        onClick={goToNextSlide}
+      >
+        Next
+      </button>
     </div>
   );
 };
